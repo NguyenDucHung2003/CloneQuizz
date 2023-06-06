@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+          <title>Document</title>
+     </head>
+     <style>
+          body {
+               background-image: url("https://cdn.diemnhangroup.com/seoulacademy/2021/06/bang-ke-hoach-hoc-tap-1.jpg");
+               background-size: cover;
+          }
+          #wrapper {
+               margin-top: 90px;
+               min-height: 100px;
+               justify-content: center;
+               align-items: center;
+               display: flex;
+          }
+          .register {
+               background: rgb(255, 251, 251);
+               min-width: 500px;
+               padding: 30px 30px 40px;
+               opacity: 0.8;
+          }
+          .content {
+               text-align: center;
+          }
+          .input {
+               width: 200px;
+               height: 30px;
+               background: transparent;
+               margin-left: 100px;
+          }
+          .back {
+               text-decoration: none;
+               width: 100px;
+               height: 30px;
+               justify-content: center;
+               align-items: center;
+               display: flex;
+          }
+          .submit {
+               width: 100px;
+               height: 40px;
+               border: 1px soclass black;
+               margin-top: 10px;
+          }
+     </style>
+     <body>
+          <div id="wrapper">
+               <form class="register">
+                    <h1 class="content">Đăng ký tài khoản</h1>
+                    <table>
+                         <tr>
+                              <h4>Thông tin đăng ký tài khoản</h4>
+                         </tr>
+                         <tr>
+                              <td>Tên người dùng</td>
+                              <td>
+                                   <input
+                                        type="text"
+                                        id="nguoidung"
+                                        class="input"
+                                        placeholder="Nhập tên người dùng"
+                                   />
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>Tên tài khoản</td>
+                              <td>
+                                   <input
+                                        type="text"
+                                        id="taikhoan"
+                                        class="input"
+                                        placeholder="Tên tài khoản"
+                                   />
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>Mật khẩu</td>
+                              <td>
+                                   <input
+                                        type="password"
+                                        id="matkhau"
+                                        class="input"
+                                        placeholder="Mật khẩu"
+                                   />
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>Nhập lại mật khẩu</td>
+                              <td>
+                                   <input
+                                        type="password"
+                                        class="input"
+                                        id="matkhau2"
+                                        placeholder="Nhập lại mật khẩu"
+                                   />
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>Số điện thoại</td>
+                              <td>
+                                   <input
+                                        type="number"
+                                        id="sodienthoai"
+                                        class="input"
+                                        placeholder="Số điện thoại"
+                                   />
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>Email</td>
+                              <td>
+                                   <input
+                                        type="Email"
+                                        id="email"
+                                        class="input"
+                                        placeholder="Email"
+                                   />
+                              </td>
+                         </tr>
+                    </table>
+                    <button>
+                         <a href="Dangnhap.html" class="back">Đăng nhập</a>
+                    </button>
+                    <input
+                         type="button"
+                         id="dangki"
+                         value="Đăng ký"
+                         class="submit"
+                    />
+               </form>
+          </div>
+     </body>
+     <script>
+          function pushAccountToLocal(account) {
+               if (localStorage.getItem("account") === null) {
+                    localStorage.setItem("account", JSON.stringify([account]))
+                    return
+               }
+               const accounts = JSON.parse(localStorage.getItem("account"))
+               accounts.push(account)
+               localStorage.setItem("account", JSON.stringify(accounts))
+          }
+          function $(byID) {
+               return document.getElementById(byID)
+          }
+
+          $("dangki").onclick = function () {
+               let kiemtra = false
+               if ($("matkhau").value == $("matkhau2").value) {
+                    if (
+                         $("matkhau").value != "" &&
+                         $("nguoidung").value != "" &&
+                         $("taikhoan").value != "" &&
+                         $("sodienthoai").value.length == 10 &&
+                         ($("email").value.includes("@icloud.com") ||
+                              $("email").value.includes("@gmail.com"))
+                    ) {
+                         kiemtra = true
+                    }
+               }
+               let data = {
+                    nguoidung_data: $("nguoidung").value,
+                    taikhoan_data: $("taikhoan").value,
+                    matkhau_data: $("matkhau").value,
+                    sodienthoai_data: $("sodienthoai").value,
+                    email_data: $("email").value,
+               }
+
+               if (kiemtra == true) {
+                    pushAccountToLocal(data)
+                    alert("Đăng kí thành công")
+                    window.location = "Dangnhap.html"
+               } else {
+                    alert("Đăng kí không thành công")
+               }
+          }
+     </script>
+</html>

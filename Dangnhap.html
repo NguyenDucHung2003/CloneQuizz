@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+               name="viewport"
+               content="width=device-width, initial-scale=1.0"
+          />
+          <link ref="stylesheet" href="" />
+          <title>Document</title>
+     </head>
+     <style>
+          body {
+               background-image: url("https://img.lovepik.com/photo/40111/9631.jpg_wh860.jpg");
+               background-size: cover;
+               height: 750px;
+               width: auto;
+          }
+          #wrapper {
+               min-height: 500px;
+               justify-content: center;
+               align-items: center;
+               display: flex;
+          }
+          #login {
+               background: rgb(255, 250, 250);
+               opacity: 0.8;
+               min-width: 300px;
+               padding: 30px 30px 40px;
+          }
+          .content {
+               text-align: center;
+               margin-bottom: 40px;
+          }
+          .form-login {
+               border-bottom: 1px solid black;
+               margin-bottom: 20px;
+          }
+          .input {
+               width: 200px;
+               height: 30px;
+               background: transparent;
+               border: 0;
+               outline: 0;
+          }
+          .submit {
+               background: transparent;
+               width: 100px;
+               height: 40px;
+               border: 1px solid black;
+               margin-top: 10px;
+          }
+          .submit:hover {
+               border: 2px solid blue;
+          }
+     </style>
+     <body>
+          <div id="wrapper">
+               <form id="login">
+                    <h1 class="content">Đăng nhập</h1>
+                    <div class="form-login">
+                         <input
+                              type="text"
+                              id="dangnhap"
+                              class="input"
+                              placeholder="Tên đang nhập"
+                         />
+                    </div>
+
+                    <div class="form-login">
+                         <input
+                              type="password"
+                              id="matkhau"
+                              class="input"
+                              placeholder="Mật khẩu"
+                         />
+                    </div>
+
+                    <input
+                         type="button"
+                         id="dangnhap1"
+                         value="Đăng nhập"
+                         class="submit"
+                    />
+                    <a href="Dangky.html">
+                         <input type="button" value="Đăng kí" class="submit"
+                    /></a>
+               </form>
+          </div>
+     </body>
+     <script>
+          function $(byId) {
+               return document.getElementById(byId)
+          }
+
+          $("dangnhap1").onclick = function () {
+               let a = localStorage.getItem("account")
+               let t = JSON.parse(a)
+               let tontai = false
+               let dem = 0
+               let dataUser = {
+                    UserName: "",
+                    UserPhone: "",
+                    UserEmail: "",
+                    // UserCount: [],
+               }
+
+               // console.log(arrayInfor)
+               for (let i = 0; i < t.length; i++) {
+                    if (
+                         t[i].taikhoan_data == $("dangnhap").value &&
+                         t[i].matkhau_data == $("matkhau").value
+                    ) {
+                         tontai = true
+                         alert("đăng nhập thành công")
+                         localStorage.setItem("nguoidung", t[i].nguoidung_data)
+                         dataUser.UserName = t[i].nguoidung_data
+                         dataUser.UserPhone = t[i].sodienthoai_data
+                         dataUser.UserEmail = t[i].email_data
+                         let x = JSON.stringify(dataUser)
+                         localStorage.setItem("UserNow", x)
+                         console.log(dataUser)
+                         window.location = "TrangBia.html"
+                    }
+               }
+
+               if (tontai == true) {
+                    for (let i = 0; i < t.length; i++) {
+                         if (t[i].nguoidung_data !== undefined) {
+                              dem++
+                         }
+                    }
+                    localStorage.setItem("countacc", dem)
+               }
+
+               // if (tontai == true) {
+               //      arrayInfor.push()
+               // }
+
+               if (tontai == false) {
+                    alert("đăng nhập thất bại")
+               }
+          }
+     </script>
+</html>

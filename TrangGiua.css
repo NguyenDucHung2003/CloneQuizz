@@ -1,0 +1,188 @@
+.active {
+     background-color: #54e369; /* Change color as needed */
+}
+.Answers_Button_Input:hover {
+     background-color: #54e369;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+select {
+     cursor: pointer;
+}
+body {
+     background-color: antiquewhite;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+     margin-left: 340px;
+}
+
+.Information_Account {
+     display: flex;
+     justify-content: center;
+     font-size: 30px;
+}
+#content-fixed {
+     position: fixed;
+     width: 500px;
+     top: 0px;
+     left: 0px;
+     z-index: -1;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+}
+
+#TypeRadio_1,
+#TypeRadio_2,
+#TypeRadio_3,
+#TypeRadio_4,
+#TypeRadio_5 {
+     width: 800px;
+     height: 340px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     margin: -7px 0px 20px -30px;
+}
+/* #container_Radio {
+     position: relative;
+     left: 130px;
+} */
+.inputRadio {
+     width: auto;
+     height: 50px;
+     line-height: 50px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     background-color: white;
+     border-radius: 10px;
+     margin: 15px;
+}
+.inputRadio:hover {
+     background-color: #54e369;
+}
+.Answers_Radio {
+     margin-top: 30px;
+}
+
+#TypeCheckBox_1,
+#TypeCheckBox_2,
+#TypeCheckBox_3,
+#TypeCheckBox_4,
+#TypeCheckBox_5 {
+     width: 800px;
+     height: 340px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     margin: -7px 0px 20px -30px;
+}
+.Answers_CheckBox {
+     margin-top: 40px;
+}
+
+.TypeCheckBoxChild {
+     border: 1px solid black;
+     height: 50px;
+     line-height: 50px;
+     margin: 20px;
+}
+.TypeCheckBoxChild:hover {
+     background-color: #54e369;
+}
+.TypeButton {
+     width: 800px;
+     margin-bottom: 20px;
+     height: 340px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     margin: -7px 0px 20px -30px;
+}
+.Answers_Button {
+     margin-top: 35px;
+}
+.Answers_Button input {
+     width: 200px;
+     height: 30px;
+     display: flex;
+}
+
+.TypeButtonChild {
+     margin: 20px;
+}
+.TypeButtonChild input {
+     width: 765px;
+     height: 50px;
+}
+.TypeOptions {
+     width: 800px;
+     margin-bottom: 20px;
+     height: 340px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     margin: -7px 0px 20px -30px;
+}
+.QuestionAnswers_Options {
+     margin-top: 50px;
+     width: 500px;
+     margin-left: 50px;
+}
+
+.QuestionAnswers_Options input {
+     display: flex;
+     width: 300px;
+     height: 40px;
+}
+.Answers_Options {
+     width: 0px;
+     height: 0px;
+}
+.Answers_Options select {
+     position: relative;
+     display: flex;
+     width: 308px;
+     height: 46px;
+     left: 440px;
+     top: -275px;
+     margin-bottom: 22.5px;
+}
+.TypeText {
+     width: 800px;
+     margin-bottom: 20px;
+     height: auto;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+          rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+     margin: -7px 0px 20px -30px;
+}
+.Answer_Text {
+     display: block;
+     height: 40px;
+     margin-top: 50px;
+     width: 790px;
+}
+#container-map {
+     position: fixed;
+     z-index: 2;
+     top: 0;
+     right: 0px;
+}
+a {
+     text-decoration: none;
+     color: white;
+}
+td {
+     border: 1px solid black;
+     text-align: center;
+}
+table {
+     width: 200px;
+     height: 200px;
+}
+#container_count div {
+     margin: 10px;
+}
+#container-time div {
+     margin: 10px;
+}

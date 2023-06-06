@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+               name="viewport"
+               content="width=device-width, initial-scale=1.0"
+          />
+          <title>Document</title>
+          <style>
+               body {
+                    background-image: url("backgroundBia.gif");
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+               }
+               #content {
+                    font-size: 36px;
+                    font-weight: bolder;
+                    display: flex;
+                    justify-content: center;
+
+                    margin: 75px;
+                    margin-top: 250px;
+               }
+
+               #content2 {
+                    font-size: 26px;
+                    font-weight: bolder;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 50px;
+               }
+               #Button {
+                    border: none;
+                    background-color: rgb(205, 11, 11);
+                    border-radius: 50px;
+                    display: flex;
+                    width: 150px;
+                    height: 50px;
+                    padding-left: 45px;
+                    font-size: 16px;
+                    margin-left: 650px;
+                    color: wheat;
+               }
+          </style>
+     </head>
+     <body>
+          <div id="content">Bài kiểm tra trắc nghiệm về kiến thức CSS</div>
+          <input id="Button" type="button" value="Bắt đầu" />
+          <div id="content2">Bài kiểm tra gồm có 30 câu / 30p</div>
+     </body>
+     <script>
+          let x = JSON.parse(localStorage.getItem("countacc"))
+          if (x <= 0) {
+               window.location.href = "Dangnhap.html"
+          }
+          const click = document.getElementById("Button")
+          click.onclick = () => {
+               var result = confirm("Bạn đã sẵn sàng ")
+               if (result == true) {
+                    window.location.href = "TrangGiua.html"
+               }
+          }
+     </script>
+</html>
